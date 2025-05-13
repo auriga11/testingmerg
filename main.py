@@ -79,7 +79,7 @@ async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Your video list has been cleared.")
 
 # Bot setup
-TOKEN = "BOT_TOKEN"
+TOKEN = os.getenv("BOT_TOKEN")
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
